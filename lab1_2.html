@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота - Завдання 2</title>
+</head>
+<body>
+    <h1>Перевірка регулярних виразів (Завдання 2)</h1>
+    <p>Результати виведено в консоль (натисніть F12 -> Console).</p>
+
+    <!-- Підключення скрипту -->
+    <script src="lab2-2.js"></script>
+    
+    <script>
+        let text = "Ось IP: 192.168.1.1, а ось RGBA(255, 0, 0, 0.5) та HEX колір #A1B2C3. Також є теги <img src='test.jpg'> та <div></div>. Дати: 2023-10-15, 2024-01-01. Додатні числа: 42, 3.14, -5, 0. Email: test@example.com та user.name@domain.co.uk";
+
+        console.log("Перевірка IP (192.168.1.1):", isIPAddress("192.168.1.1")); // true
+        console.log("Перевірка IP (999.1.1.1):", isIPAddress("999.1.1.1"));   // false
+
+        console.log("RGBA:", findRGBA(text));
+        console.log("HEX:", findHexColor(text));
+        
+        console.log("Теги img:", findTags(text, "img"));
+        console.log("Теги div:", findTags(text, "div"));
+
+        console.log("Додатні числа:", findPosNum(text));
+        console.log("Дати:", findDates(text));
+        console.log("Email:", findEmail(text));
+    </script>
+</body>
+</html>
